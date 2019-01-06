@@ -1,6 +1,47 @@
 <html>
-<header><title>This is title</title></header>
+<header>
+    <title>Lolgubbarnas klassiker</title>
+</header>
+
+<style>
+html {
+    background: url("http://placekitten.com/200/300") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+</style>
+
+<script>
+    // Set the date we're counting down to
+    const countDownDate = new Date("Jan 10, 2019 15:37:25").getTime();
+    // Update the count down every 1 second
+    const x = setInterval(() => {
+        // Get todays date and time
+        const now = new Date().getTime();
+        // Find the distance between now and the count down date
+        const distance = countDownDate - now;
+        // Time calculations for days, hours, minutes and seconds
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        // Output the result in an element with id="demo"
+        document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+        // If the count down is over, write some text
+        // if (distance < 0) {
+        //     clearInterval(x);
+        //     document.getElementById("demo").innerHTML = "EXPIRED";
+        // }
+    }, 1000);
+</script>
+
 <body>
-Hello world
+    <p id="demo"></p>
+
+    <!-- <img src="http://placekitten.com/200/300" alt="Smiley face"> -->
 </body>
+
 </html>
